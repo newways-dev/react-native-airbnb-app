@@ -1,10 +1,11 @@
-import {SafeAreaView} from 'react-native'
+import { SafeAreaView } from 'react-native'
 import Home from './src/screens/home'
+import Post from './src/components/post'
 
 const App = () => {
   return (
     <SafeAreaView>
-      <Home />
+      <Post />
     </SafeAreaView>
   )
 }
