@@ -1,24 +1,26 @@
 import { View, Image, Text } from 'react-native'
 import { styles } from './style'
 
-const Post = () => {
+const Post = ({ post }) => {
   return (
     <View style={styles.post}>
       <Image
         style={styles.image}
         source={{
-          uri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/1.jpg',
+          uri: post.image,
         }}
       />
-      <Text style={styles.bedrooms}>1 bed 1 bedroom</Text>
-      <Text style={styles.description}>
-        Garmisch-Partenkirchen, Bayern, Deutschland
+      <Text style={styles.bedrooms}>
+        {post.bed} bed {post.bedroom} bedroom
+      </Text>
+      <Text style={styles.description} numberOfLines={2}>
+        {post.type} {post.title}
       </Text>
       <Text style={styles.prices}>
-        <Text style={styles.oldPrice}>$36 </Text>
-        <Text style={styles.price}> $30 / night</Text>
+        <Text style={styles.oldPrice}>${post.oldPrice} </Text>
+        <Text style={styles.price}> ${post.newPrice} / night</Text>
       </Text>
-      <Text style={styles.totalPrice}>$230 total</Text>
+      <Text style={styles.totalPrice}>${post.totalPrice} total</Text>
     </View>
   )
 }
